@@ -122,6 +122,63 @@ The current version supports the following capabilities:
 | **Contacts** | Export WeChat friends, group chats, and official account information; attempt to recover deleted friends (work in progress) |
 | **HTTP API** | Map local message capabilities to HTTP API for easy integration with external systems, automation scripts, and secondary development |
 
+## 版本更新与优化
+
+本版本（`f3b0cf5`）为作者删除前的最终完整版本，包含以下重要优化：
+
+### 性能优化
+
+| 优化项 | 说明 |
+|--------|------|
+| **API 批量获取速度** | 提升 API 批量获取聊天记录的速度，尤其是大聊天记录场景 |
+| **主界面流畅度** | 获取大量消息时不再明显卡住 WeFlow 主界面 |
+| **ChatLab 导出性能** | 优化 ChatLab 导出与同步性能，拉取大批量消息更流畅 |
+| **底层游标索引** | 优化底层游标索引性能，提升消息读取效率 |
+
+### 稳定性修复
+
+| 修复项 | 说明 |
+|--------|------|
+| **游标读取稳定性** | 增强消息游标读取稳定性，异常时自动回退复核，减少数据缺失 |
+| **主线程阻塞** | 修复主线程阻塞和高 CPU 问题 |
+| **群成员加载** | 修复群成员侧边栏首次加载卡住问题 |
+| **批量导出** | 优化批量文本导出流程，提升性能 |
+
+### 关键提交记录
+
+- `777f5b8` 优化底层游标索引性能；优化 HTTP API 索引逻辑
+- `0ba1067` API 服务支持 ChatLab 新版协议
+- `4beddb7` 修复主线程阻塞和高 CPU 问题
+- `5cb364f` 优化批量文本导出流程
+- `698d2c9` 修复群成员侧边栏首次加载卡住
+- `3c0683b` 解决大量消息引发的性能退化
+
+---
+
+**Version Updates & Optimizations**
+
+This version (`f3b0cf5`) is the final complete version before the author's deletion, including the following important optimizations:
+
+### Performance Optimizations
+
+| Optimization | Description |
+|--------------|-------------|
+| **API Batch Speed** | Improved API batch retrieval speed, especially for large chat histories |
+| **UI Responsiveness** | No longer blocks the main interface when fetching large amounts of messages |
+| **ChatLab Export** | Optimized ChatLab export and sync performance for smoother batch message pulling |
+| **Cursor Index** | Optimized underlying cursor index performance for faster message reading |
+
+### Stability Fixes
+
+| Fix | Description |
+|-----|-------------|
+| **Cursor Stability** | Enhanced message cursor reading stability with automatic fallback on exceptions |
+| **Main Thread** | Fixed main thread blocking and high CPU issues |
+| **Group Members** | Fixed group members sidebar stuck on first load |
+| **Batch Export** | Optimized batch text export pipeline |
+
+---
+
 ## HTTP API
 
 > [!WARNING]
